@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22d3ee; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:Poppins, system-ui, -apple-system, Arial; background:var(--bg); color:var(--text); }
+    header { position:sticky; top:0; backdrop-filter:saturate(1.2) blur(8px); background:rgba(17,24,39,.6); border-bottom:1px solid #1f2937; }
+    nav { max-width:1100px; margin:auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; }
+    nav a { color:var(--text); text-decoration:none; margin-left:16px; font-weight:600; }
+    .btn { background:var(--accent); color:#001018; padding:10px 16px; border-radius:10px; font-weight:700; display:inline-block; }
+    .hero { max-width:1100px; margin:60px auto; padding:0 20px; display:grid; gap:24px; grid-template-columns:1.1fr .9fr; align-items:center; }
+    .hero h1 { font-size:42px; line-height:1.1; margin:0 0 14px; }
+    .hero p { color:var(--muted); margin:0 0 22px; }
+    .card { background:var(--card); border:1px solid #1f2937; border-radius:18px; padding:22px; }
+    .grid { max-width:1100px; margin:30px auto; padding:0 20px; display:grid; gap:18px; grid-template-columns:repeat(3,1fr); }
+    .grid h3 { margin:0 0 8px; }
+    .section { max-width:1100px; margin:60px auto; padding:0 20px; }
+    .footer { border-top:1px solid #1f2937; color:var(--muted); padding:28px 20px; text-align:center; }
+    @media (max-width:900px){
+      .hero{ grid-template-columns:1fr; text-align:center; }
+      .grid{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div style="font-weight:800">YourBrand</div>
+      <div>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Make a great first impression.</h1>
+        <p>Short line about who you are and what you do. Keep it snappy and clear.</p>
+        <a class="btn" href="#work">See my work</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1200&auto=format&fit=crop" alt="Showcase" style="width:100%; border-radius:12px;">
+      </div>
+    </section>
+
+    <section id="work" class="grid">
+      <div class="card"><h3>Project One</h3><p class="muted">1–2 lines about the result.</p></div>
+      <div class="card"><h3>Project Two</h3><p class="muted">What problem did you solve?</p></div>
+      <div class="card"><h3>Project Three</h3><p class="muted">Any metrics or wins?</p></div>
+    </section>
+
+    <section id="about" class="section card">
+      <h2>About</h2>
+      <p>Write a small bio, your skills, and what makes you different. Use bullet points if helpful.</p>
+    </section>
+
+    <section id="contact" class="section card">
+      <h2>Contact</h2>
+      <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <div style="display:grid; gap:12px;">
+          <input required name="name" placeholder="Your name" style="padding:12px; border-radius:10px; border:1px solid #374151; background:#0b1220; color:var(--text)">
+          <input required type="email" name="email" placeholder="Email" style="padding:12px; border-radius:10px; border:1px solid #374151; background:#0b1220; color:var(--text)">
+          <textarea required name="message" rows="4" placeholder="How can I help?" style="padding:12px; border-radius:10px; border:1px solid #374151; background:#0b1220; color:var(--text)"></textarea>
+          <button class="btn" type="submit">Send</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">© <span id="y"></span> YourBrand — All rights reserved.</footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
